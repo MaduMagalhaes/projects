@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vogais</title>
+</head>
+<body>
+    <h1>Contando vogais</h1>
+    Insira uma palavra: <input type="text" id="palavra">
+    <input type="button" onclick="contar()" value="Contar" />
+    <p id="mensagem">.</p>
+
+    <script>
+      function contar() {
+        let palavra = document.getElementById("palavra").value;
+        let vogais = 'aeiouáéíóúãõâêôûAEIOUÁÉÍÓÚÂÊÔ';
+        let qtd = 0;
+        for(let i = 0; i < vogais.length; i++) {
+            for(let j = 0; j < palavra.length; j++) {
+        if(palavra[j] === vogais[i]) {
+              qtd += 1;
+           }
+           }
+        }
+
+        if(qtd > 0) {
+            document.getElementById("mensagem").innerHTML = `A quantidade de vogais em ${palavra} é equivalente a ${qtd}.`;
+        }
+
+        else {
+            document.getElementById("mensagem").innerHTML = `Não há vogais na palavra inserida!`;
+        }
+}
+    </script>
+</body>
+</html>
