@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>escola virtual</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="center">Escola Virtual</h1>
+  <h3 class="center">Formulário de Pré-Matrícula</h3>
+
+  <form id="some-form">
+    <div class="row1">
+      <p><strong>Dados pessoais</strong></p>
+      Nome do Aluno: <input type="text" required> <br>
+      Nascimento (dd/mm/aaaa): <input type="date" required> <br>
+      Nome da Mãe: <input type="text" required> <br>
+      Nome da Pai: <input type="text" required> <br>
+      Telefone: DDD (<input type="number" maxlength="2" id="ddd">) Tel: <input type="number" maxlength="9"> Ramal:
+      <input type="number" maxlength="4">
+      E-mail: <input type="text" id="email">
+    </div>
+    <div class="row2">
+      <p><strong>Informações de Matrícula:</strong></p>
+      <div class="col1">
+        Série: <br> <select name="Série:" id="serie">
+          <option>Pré-Escolar</option>
+          <option>Fundamental I</option>
+          <option>Fundamental II</option>
+          <option>Ensino Médio</option>
+          <option>Superior</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="col2">
+        Turno: <br> <input type="radio" name="turno" required> Manhã <br> <input type="radio" name="turno" required>
+        Tarde
+      </div>
+      <div class="col3" id="tres">
+        Atividade Extracurriculares: <br>
+        <input type="checkbox" class="checkbox">Informática <br>
+        <input type="checkbox" class="checkbox">Música <br>
+        <input type="checkbox" class="checkbox">Balet <br>
+        <input type="checkbox" class="checkbox">Pintura <br>
+        <input type="checkbox" class="checkbox">Judô <br>
+        <input type="checkbox" class="checkbox">Futebol <br>
+      </div>
+    </div>
+    <input type="submit" value="Enviar Formulário" class="botao" id="submit">
+    <button type="reset" class="botao">Limpar Campos</button>
+  </form>
+
+  <script>
+    var listaDeDdd = [61, 62, 64, 65, 66, 67, 82, 71, 73, 74, 75, 77, 85, 88, 98, 99, 83, 81, 87, 86, 89, 84, 79, 68, 96, 92, 97, 91, 93, 94, 69, 95, 63, 27, 28, 31, 32, 33, 34, 35, 37, 38, 21, 22, 24, 11, 12, 13, 14, 15, 16, 17, 18, 19, 41, 42, 43, 44, 45, 46, 51, 53, 54, 55, 47, 48, 49];
+var ddd = document.getElementById('ddd').value;
+var atividades = document.querySelectorAll('.form-check-input:checked');
+var email = document.getElementById('email').value;
+
+function validarEmail() {
+  if (email.match(/@/) && email.match(/./)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validarDdd() {
+  if (ddd = listaDeDdd) {
+    true;
+  } else {
+    alert("O DDD informado é inválido!");
+  }
+}
+
+function validarAtividades() {
+  if (atividades.length > 3) {
+    alert("Só pode escolher até no máximo 3 atividades extracurriculares!");
+    return false;
+  }
+}
+
+const form = document.getElementById('some-form')
+form.addEventListener('submit', e => {
+  e.preventDefault()
+})
+  </script>
+</body>
+
+</html>
