@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 9</title>
+</head>
+<body>
+    <div class="container">
+    <h2>Atividade 1</h2>
+    <div class="container">
+        <div class="col">
+            Nome completo: <input type="text" id="ncomplet">
+            <button type="button" onclick="funcao()" id="botao">>></button>
+        </div>
+        <div class="colu">
+            Nome:<input type="text" id="nome">
+            Sobrenome:<input type="text" id="sobrenome">
+    </div>
+    </div>
+    <script>
+      function funcao(){
+    let completo = document.getElementById('ncomplet').value;
+    let parte = completo.split('');
+    let um = parte[0];
+    let dois = parte[1].join('');
+
+    document.getElementById('nome').value = parte[0];
+    document.getElementById('sobrenome').value = parte.slice(1).join(' ');
+}
+    </script>
+</body>
+</html>
